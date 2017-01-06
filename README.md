@@ -1,4 +1,4 @@
-git init
+git init \n
 git clone https://github.com/yuvrajh/Calico.git
 git status
 git add calico.yaml
