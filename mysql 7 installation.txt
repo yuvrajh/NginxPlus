@@ -1,0 +1,16 @@
+wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
+yum localinstall mysql57-community-release-el7-7.noarch.rpm
+yum repolist
+yum install mysql-server
+systemctl start mysqld
+systemctl enable mysqld
+
+grep 'temporary password' /var/log/mysqld.log
+
+mysql_secure_installation
+
+grep 'temporary password' /var/log/mysqld.log
+
+mysql -u root -p
+
+uninstall plugin validate_password;
