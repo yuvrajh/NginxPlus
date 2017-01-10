@@ -1,0 +1,10 @@
+	[root@dlp ~]# vi /etc/rsyslog.conf
+# line 15,16: uncomment, lne 17: add
+$ModLoad imudp
+$UDPServerRun 514
+$AllowedSender UDP, 127.0.0.1
+# line 54: change like follows
+*.info;mail.none;authpriv.none;cron.none,local2.none   /var/log/messages
+ local2.*                                                /var/log/haproxy.log
+
+[root@dlp ~]# systemctl restart rsyslog 
